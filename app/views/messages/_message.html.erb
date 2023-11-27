@@ -1,0 +1,9 @@
+<div class="<%= message.sent_by %>">
+  <% if message.sent_by == 'user' %>
+    <strong>User:</strong> <%= message.body %>
+  <% elsif message.sent_by == 'profile' %>
+    <strong><%= message.profile.name %>:</strong> <%= message.body %>
+  <% else %>
+    <%= message.body %>
+  <% end %>
+</div>

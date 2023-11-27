@@ -1,0 +1,11 @@
+<h1>Chat with <%= @profile.name %></h1>
+
+<div id="chat-history">
+  <%= render @messages %>
+</div>
+
+<%= form_with(url: send_message_profile_chats_path(profile_id: @profile.id), method: :post, remote: true, local: true) do |form| %>
+  <%= form.hidden_field :profile_id, value: @profile.id %>
+  <%= form.text_field :body, placeholder: 'Type your message...' %>
+  <%= form.submit 'Send' %>
+<% end %>

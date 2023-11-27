@@ -1,0 +1,7 @@
+// Update the chat history by appending the AI's response
+var chatHistory = document.getElementById('chat-history');
+var response = "<div class='Profile'><strong>Profile:</strong> <%= j render(partial: 'shared/response', locals: { message: @profile.messages.last }) %></div>";
+chatHistory.innerHTML += response;
+
+// Clear the input field
+document.getElementById('message_body').value = '';
